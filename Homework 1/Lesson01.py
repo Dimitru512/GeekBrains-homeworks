@@ -1,6 +1,5 @@
-name = input("Enter your name: ")
-second_name = input("Enter your second name: ")
-age = int(input("Enter your age: "))
+name = input("Введите имя: ")
+second_name = input("Введите фамилию: ")
+age = int(input("Введите возраст: "))
 
-
-print("Hello " + name + " " + second_name)
+print(f"Привет, {name} {second_name}. Идет {age}-й год жизни. Удачи!")

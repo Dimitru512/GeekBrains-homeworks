@@ -1,4 +1,4 @@
-number = int(input("Введите целое положительное число: "))
+number = int(input("Введите число: "))
 max_figure = 0
 
 while number != 0:

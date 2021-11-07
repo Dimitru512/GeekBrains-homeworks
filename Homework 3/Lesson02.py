@@ -4,13 +4,12 @@
 
 def user_data(name, surname, birth_year, city, email, phone):
     """Выводит аргументы в одну строку через пробел"""
-    return f"{name} {surname} {birth_year} {city} {email} {phone}"
+    return f"\nДанные пользователя {name} {surname} {birth_year} {city} {email} {phone}"
 
 
 print("Введите данные\n")
 
-print("\nВведенные данные о пользователе: " +
-      user_data(name=input("Введите имя: "),
+print(user_data(name=input("Введите имя: "),
                 surname=input("Введите фамилию: "),
                 birth_year=input("Введите год рождения: "),
                 city=input("Введите город: "),

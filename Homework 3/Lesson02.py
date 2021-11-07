@@ -2,9 +2,10 @@
 # имя, фамилия, год рождения, город проживания, email, телефон.
 # Функция должна принимать параметры как именованные аргументы. Реализовать вывод данных о пользователе одной строкой.
 
-def user_data(name, surname, birth_year, city, email, phone):
+def user_data(**kwargs):
     """Выводит аргументы в одну строку через пробел"""
-    return f"\nДанные пользователя {name} {surname} {birth_year} {city} {email} {phone}"
+    result = " ".join(kwargs.values())
+    return f"\nДанные пользователя {result}"
 
 
 print("Введите данные\n")

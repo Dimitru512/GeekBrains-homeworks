@@ -19,5 +19,4 @@ while flag:
                 break
             else:
                 print("Некорректный ввод -> " + value)
-
-print(summary)
+    print(f"Сумма всех введенных чисел равна: {summary}")

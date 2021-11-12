@@ -11,5 +11,5 @@ def int_func(text):
 value = input("Введите слово: ")
 print(int_func(value))
 
-value = input("Введите текст: ").split()
-print(" ".join(map(int_func, value)))
+value = input("Введите текст: ")
+print(int_func(value))

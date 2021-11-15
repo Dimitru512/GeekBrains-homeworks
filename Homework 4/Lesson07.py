@@ -7,21 +7,14 @@
 # Например, факториал четырёх 4! = 1 * 2 * 3 * 4 = 24.
 
 from math import factorial
-from itertools import count
 
 
-def gen():
-    for el in count(1):
-        yield factorial(el)
+def fact(num):
+    for i in range(1, num + 1):
+        yield factorial(i)
 
 
-try:
-    num = int(input("Введите целое число: "))
-    x = 1
-    for i in gen():
-        print(f"!{x} - {i}")
-        if x == num:
-            break
-        x += 1
-except ValueError:
-    print("Необходимо ввести целое число")
+n = int(input("Введите целое число: "))
+
+for el in fact(n):
+    print(f"{el}")

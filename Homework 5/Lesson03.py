@@ -8,6 +8,7 @@
 with open("les3_file.txt", "r") as file:
     salary_sum = 0
     row_count = 0
+
     print("Сотрудники с окладом менее 20 тысяч:")
     for row in file:
         splited_row = row.split()
@@ -15,4 +16,5 @@ with open("les3_file.txt", "r") as file:
         if float(splited_row[1]) < 20000:
             print(row)
         row_count += 1
+
     print(f"Средняя зарплата: {salary_sum / row_count}")

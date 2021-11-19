@@ -7,6 +7,6 @@ with open("les5_file.txt", "w") as file:
     file.write(" ".join(my_list))
     print(f"В файл les5_file.txt записаны числа: {' '.join(my_list)}")
 
-with open("les5_file.txt", "r") as file:
+with open("les5_file.txt") as file:
     new_list = map(int, file.read().split())
     print(f"Сумма чисел из файла les5_file.txt равна {sum(new_list)}")

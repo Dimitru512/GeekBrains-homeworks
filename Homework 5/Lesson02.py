@@ -2,5 +2,5 @@
 # выполнить подсчет количества строк, количества слов в каждой строке.
 
 with open("les2_file.txt", "r") as file:
-    for row, text in enumerate(file):
-        print(f"Количество слов в строке {row + 1} равно {len(text.split())}")
+    for line, text in enumerate(file):
+        print(f"Количество слов в строке {line + 1} равно {len(text.split())}")

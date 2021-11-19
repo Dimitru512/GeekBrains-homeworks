@@ -2,9 +2,9 @@
 # Об окончании ввода данных свидетельствует пустая строка.
 
 with open("les1_file.txt", "w") as file:
-    x = None
     print("Для выхода оставьте поле ввода пустым и нажмите Enter")
-    while x != "":
+    while True:
         x = input("Введите текст: ")
+        if x == "":
+            break
         file.write(x + "\n")
-

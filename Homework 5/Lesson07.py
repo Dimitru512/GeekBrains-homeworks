@@ -11,3 +11,26 @@
 # [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 # Подсказка: использовать менеджер контекста.
 
+import json
+
+profit_dict = {}
+average_dict = {}
+
+with open("les7_file.txt", encoding="windows-1251") as file:
+    firm_count = 0
+    profit_sum = 0
+    for line in file:
+        splited_line = line.split()
+        profit = float(splited_line[2]) - float(splited_line[3])
+        profit_dict[splited_line[0]] = profit
+        if profit >= 0:
+            firm_count += 1
+            profit_sum += profit
+
+average_dict["average_profit"] = profit_sum / firm_count
+
+with open("les7_file.json", "w") as write_f:
+    json.dump([profit_dict, average_dict], write_f)
+
+print(profit_dict)
+print(average_dict)

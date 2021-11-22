@@ -8,9 +8,12 @@
 # Физкультура: — 30(пр) —
 # Пример словаря: {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 
+my_dict = {}
+
 with open("les6_file.txt", encoding="windows-1251") as file:
-    lines = file.readlines()
-    for line in lines:
+    for line in file:
         splited_line = line.split()
+        temp = [int(x[:x.find("(")]) for x in splited_line if x.find("(") != -1]
+        my_dict[splited_line[0]] = sum(temp)
 
-
+print(my_dict)

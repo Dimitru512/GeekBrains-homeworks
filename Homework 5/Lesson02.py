@@ -4,3 +4,4 @@
 with open("les2_file.txt", "r") as file:
     for line, text in enumerate(file):
         print(f"Количество слов в строке {line + 1} равно {len(text.split())}")
+    print(f"Всего строк в файле {line + 1}")

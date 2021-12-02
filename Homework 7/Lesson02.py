@@ -24,7 +24,7 @@ class Coat(Clothes):
 
     @property
     def calc(self):
-        return self.par / 6.5 + 0.5
+        return round(self.par / 6.5 + 0.5, 2)
 
 
 class Suit(Clothes):
@@ -33,11 +33,11 @@ class Suit(Clothes):
 
     @property
     def calc(self):
-        return 2 * self.par + 0.3
+        return round(2 * self.par + 0.3, 2)
 
 
-coat = Coat(50)
-suit = Suit(100)
+coat = Coat(48)
+suit = Suit(180)
 
 print(coat.calc)
 print(suit.calc)

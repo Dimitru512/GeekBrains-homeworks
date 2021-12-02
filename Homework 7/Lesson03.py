@@ -26,22 +26,34 @@
 # Тогда метод make_order() вернет строку: *****\n*****\n*****.
 
 class Cell:
-    def __init__(self):
-        pass
+    def __init__(self, count: int):
+        self.count = count
 
     def __add__(self, other):
-        pass
+        return f"Суммарное количество ячеек равно {self.count + other.count}"
 
     def __sub__(self, other):
-        pass
+        if self.count - other.count > 0:
+            return f"Количество ячеек при вычитании равно {self.count - other.count}"
+        else:
+            return "В первой клетке меньше ячеек, чем во второй"
 
     def __mul__(self, other):
-        pass
+        return f"Новая клетка содержит {self.count * other.count} ячеек"
 
     def __truediv__(self, other):
-        pass
+        return f"Новая клетка содержит {round(self.count / other.count)} ячеек"
 
-    def make_order(self):
-        pass
+    def make_order(self, row):
+        return "\n".join(["*" * row for _ in range(self.count // row)]) + "\n" + "*" * (self.count % row)
 
 
+a = Cell(5)
+b = Cell(10)
+
+print(a + b)
+print(a - b)
+print(b - a)
+print(a * b)
+print(b / a)
+print(a.make_order(2))

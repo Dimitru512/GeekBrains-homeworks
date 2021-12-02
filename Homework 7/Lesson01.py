@@ -19,12 +19,19 @@ class Matrix:
         return body_str
 
     def __add__(self, other):
-        result = [map(sum, zip(*i)) for i in zip(self.body, other.body)]
-        return result
+        new_matrix = []
+        for i in range(len(self.body)):
+            line = []
+            for k in range(len(self.body[i])):
+                line.append(self.body[i][k] + other.body[i][k])
+            new_matrix.append(line)
+        return new_matrix
 
 
 a = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 b = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
-print(a + b)
+c = Matrix(a + b)
+print(c)
 
+# Знаю, что стоило проверить матрицы на размер, но было не до этого

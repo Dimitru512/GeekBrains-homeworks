@@ -6,14 +6,38 @@
 # для костюма (2*H + 0.3). Проверить работу этих методов на реальных данных.
 # Реализовать общий подсчет расхода ткани. Проверить на практике полученные на этом уроке знания:
 # реализовать абстрактные классы для основных классов проекта, проверить на практике работу декоратора @property.
+from abc import ABC, abstractmethod
 
-class Clothes:
-    pass
+
+class Clothes(ABC):
+    def __init__(self, par):
+        self.par = par
+
+    @abstractmethod
+    def calc(self):
+        pass
 
 
 class Coat(Clothes):
-    pass
+    def __init__(self, par):
+        super().__init__(par)
+
+    @property
+    def calc(self):
+        return (self.par / 6.5) + 0.5
 
 
 class Suit(Clothes):
-    pass
+    def __init__(self, par):
+        super().__init__(par)
+
+    @property
+    def calc(self):
+        return (2 * self.par) + 0.3
+
+
+coat = Coat(50)
+suit = Suit(100)
+
+print(coat.calc)
+print(suit.calc)

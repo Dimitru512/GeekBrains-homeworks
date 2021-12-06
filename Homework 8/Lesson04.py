@@ -5,20 +5,30 @@
 
 
 class Storage:
-    pass
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
 
 
 class OfficeEquipment:
-    pass
+    def __init__(self, make, model):
+        self.model = model
+        self.make = make
 
 
 class MFP(OfficeEquipment):
-    pass
+    def __init__(self, make, model, print_speed: int):
+        super().__init__(make, model)
+        self.print_speed = print_speed
 
 
 class Printer(OfficeEquipment):
-    pass
+    def __init__(self, make, model, duplex_print: bool):
+        super().__init__(make, model)
+        self.duplex_print = duplex_print
 
 
 class Scanner(OfficeEquipment):
-    pass
+    def __init__(self, make, model, duplex_scan: bool):
+        super().__init__(make, model)
+        self.duplex_scan = duplex_scan

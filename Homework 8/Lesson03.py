@@ -16,22 +16,25 @@ class NotNumberException(Exception):
     pass
 
 
-def append_number(number_list: list):
-    value = input("Введите число >>> ")
-
+def number_control(number: str):
     try:
-        number_list.append(float(value))
+        a = int(number)
+        return a
     except ValueError:
-        raise NotNumberException(f"Вы ввели '{value}' вместо числа")
+        raise NotNumberException(f"Вы ввели '{number}' вместо числа")
 
 
 numbers = []
 
+print("Вводите целое число + Enter. Для выхода из программы напишите stop")
+
 while True:
     try:
-        append_number(numbers)
+        value = input(">>> ")
+        if value.lower() != "stop":
+            numbers.append(number_control(value))
+        else:
+            print(numbers)
+            break
     except NotNumberException as exception:
         print(exception)
-    except KeyboardInterrupt:
-        print(f"\nСписок чисел = {numbers}")
-        break
